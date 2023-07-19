@@ -1,30 +1,48 @@
+import Meta from '../components/Meta.jsx';
 
-## React Lightweight Calendar Props
+export default function wrapper({ children }) {
+  return (
+    <>
+      <Meta
+        description="React Calendar Props"
+        keywords="React Calendar, React Event Calendar, React Timeline Calendar, React Google Calendar"
+        title="Props"
+      />
+      <div>
+        {children}
+      </div>
+    </>
+  );
+}
 
-<span id="theme-provider-props" className="scroll-mt-32" />
-The following props are available for React Lightweight Calenar Component:
-<br /><br />
+<wrapper>
+    ## React Lightweight Calendar Props
 
-| Attribute           | Type      | Description                                                                                   | Default                                 | Possible Values                              | Additional Information                                      |
-| ------------------- | --------- | --------------------------------------------------------------------------------------------- | --------------------------------------- | -------------------------------------------- | ------------------------------------------------------------ |
-| `data`              | array     | An array of item objects for the calendar                                                     | -                                       | Array of item objects                       | Each item object should have the specified properties: `id`, `startTime`, `endTime`, `title`, `bgColor`, `textColor`. |
-| `currentView`       | string    | A string indicating the current view of the calendar                                          | MONTH                                   | `WEEK_TIME`, `DAY`, `MONTH`, `WEEK`, `WEEK_IN_PLACE`, `DAY_IN_PLACE` | -                                                            |
-| `currentDate`       | string    | The current date displayed on the calendar in 'YYYY-MM-DD' format                            | now (current date)                      | String representing date in 'YYYY-MM-DD' format    | -                                                            |
-| `setCurrentDate`    | function  | A callback function that is called when the current date is changed                           | Navigation not visible if not provided | Function                                   | It receives the new date as a parameter.                    |
-| `activeTimeDateField` | string  | The field based on which the elements will be positioned on the calendar                        | -                                       | String representing time/date field         | It can be any time date field from the `data` array or an interval separated by a '-'. (`startTime`, `endTime`, `createdAt`, `updatedAt`, `startTime-endTime`, `createdAt-updated`...) |
-| `weekStartsOn`      | number    | A number that regulates which day the week starts on (0 to 6, where 0 represents Sunday, 1 represents Monday, and so on)  | -                                      | Integer (0 to 6)                            | 0 represents Sunday, 1 represents Monday, and so on.       |
-| `renderItem`        | function  | A callback function for custom rendering of each element                                      | -                                       | Function                                   | It receives the item data and a boolean indicating if the element is currently being hovered over. |
-| `renderItemText`    | function  | A callback function for custom rendering of the text content of each element                   | -                                       | Function                                   | It receives the item data.                                 |
-| `renderHeaderItem`  | function  | A callback function for custom rendering of the header element in the WEEK_TIME and DAY views  | -                                       | Function                                   | It receives the header item data and additional information about the element's position. |
-| `renderHeaderItemText` | function | A callback function for custom rendering of the text content of the header element in the WEEK_TIME and DAY views | -                             | Function                                   | It receives the header item data.                           |
-| `disableHoverEffect` | boolean   | A boolean value that determines whether a 'hovered' class name will be added to each hovered element | false                               | true, false                                | -                                                            |
-| `colorDots`         | array     | An array of color dot objects that can be used to mark specific dates on the calendar         | -                                      | Array of color dot objects                  | Each color dot object should have properties: `color`, `text`, `date`. |
-| `timeDateFormat`    | object    | An object that defines the format of time units displayed on the calendar                     | -                                      | Object with properties: `day`, `hour`, `monthYear` | -                                                            |
-| `onDayNumberClick`  | function  | A callback function that is called when a day number is clicked                                | -                                      | Function                                   | It receives the clicked day and event as a parameter.       |
-| `onDayStringClick`  | function  | A callback function that is called when a day text is clicked                                  | -                                      | Function                                   | It receives the clicked day and event as a parameter.       |
-| `onHourClick`       | function  | A callback function that is called when an hour on the left side of the calendar is clicked    | -                                      | Function                                   | It receives the clicked hour and event as a parameter.      |
-| `onColorDotClick`   | function  | A callback function that is called when a color dot is clicked                                 | -                                      | Function                                   | It receives the clicked color dot information and event as a parameter. |
-| `onItemClick`       | function  | A callback function that is called when an item is clicked                                    | -                                      | Function                                   | It receives the clicked item data and event as a parameter.  |
-| `onCellClick`       | function  | A callback function that is called when a cell on the calendar is clicked                      | -                                      | Function                                   | It receives the clicked cell date information and event as a parameter. |
-| `onCellHeaderClick` | function  | A callback function that is called when a cell header is clicked                               | -                                      | Function                                   | It receives the clicked cell date information and event as a parameter. It is the part to the left and right of the day number within a cell. In the case of MONTH and WEEK views, `onCellClick` method will be called instead of this one. |
-| `cellDisplayMode`   | object    | An object that controls the display mode of the cells in the calendar                          | -                                      | Object with properties: `[CURRENT_VIEW]`, `inactiveCells`, `state` | -                                                            |
+    <span id="theme-provider-props" className="scroll-mt-32" />
+    The following props are available for React Lightweight Calenar Component:
+    <br /><br />
+
+    | Attribute           | Type      | Description                                                                                   | Default                                 | Possible Values                              | Additional Information                                      |
+    | ------------------- | --------- | --------------------------------------------------------------------------------------------- | --------------------------------------- | -------------------------------------------- | ------------------------------------------------------------ |
+    | `data`              | array     | An array of item objects for the calendar                                                     | -                                       | Array of item objects                       | Each item object should have the specified properties: `id`, `startTime`, `endTime`, `title`, `bgColor`, `textColor`. |
+    | `currentView`       | string    | A string indicating the current view of the calendar                                          | MONTH                                   | `WEEK_TIME`, `DAY`, `MONTH`, `WEEK`, `WEEK_IN_PLACE`, `DAY_IN_PLACE` | -                                                            |
+    | `currentDate`       | string    | The current date displayed on the calendar in 'YYYY-MM-DD' format                            | now (current date)                      | String representing date in 'YYYY-MM-DD' format    | -                                                            |
+    | `setCurrentDate`    | function  | A callback function that is called when the current date is changed                           | Navigation not visible if not provided | Function                                   | It receives the new date as a parameter.                    |
+    | `activeTimeDateField` | string  | The field based on which the elements will be positioned on the calendar                        | -                                       | String representing time/date field         | It can be any time date field from the `data` array or an interval separated by a '-'. (`startTime`, `endTime`, `createdAt`, `updatedAt`, `startTime-endTime`, `createdAt-updated`...) |
+    | `weekStartsOn`      | number    | A number that regulates which day the week starts on (0 to 6, where 0 represents Sunday, 1 represents Monday, and so on)  | -                                      | Integer (0 to 6)                            | 0 represents Sunday, 1 represents Monday, and so on.       |
+    | `renderItem`        | function  | A callback function for custom rendering of each element                                      | -                                       | Function                                   | It receives the item data and a boolean indicating if the element is currently being hovered over. |
+    | `renderItemText`    | function  | A callback function for custom rendering of the text content of each element                   | -                                       | Function                                   | It receives the item data.                                 |
+    | `renderHeaderItem`  | function  | A callback function for custom rendering of the header element in the WEEK_TIME and DAY views  | -                                       | Function                                   | It receives the header item data and additional information about the element's position. |
+    | `renderHeaderItemText` | function | A callback function for custom rendering of the text content of the header element in the WEEK_TIME and DAY views | -                             | Function                                   | It receives the header item data.                           |
+    | `disableHoverEffect` | boolean   | A boolean value that determines whether a 'hovered' class name will be added to each hovered element | false                               | true, false                                | -                                                            |
+    | `colorDots`         | array     | An array of color dot objects that can be used to mark specific dates on the calendar         | -                                      | Array of color dot objects                  | Each color dot object should have properties: `color`, `text`, `date`. |
+    | `timeDateFormat`    | object    | An object that defines the format of time units displayed on the calendar                     | -                                      | Object with properties: `day`, `hour`, `monthYear` | -                                                            |
+    | `onDayNumberClick`  | function  | A callback function that is called when a day number is clicked                                | -                                      | Function                                   | It receives the clicked day and event as a parameter.       |
+    | `onDayStringClick`  | function  | A callback function that is called when a day text is clicked                                  | -                                      | Function                                   | It receives the clicked day and event as a parameter.       |
+    | `onHourClick`       | function  | A callback function that is called when an hour on the left side of the calendar is clicked    | -                                      | Function                                   | It receives the clicked hour and event as a parameter.      |
+    | `onColorDotClick`   | function  | A callback function that is called when a color dot is clicked                                 | -                                      | Function                                   | It receives the clicked color dot information and event as a parameter. |
+    | `onItemClick`       | function  | A callback function that is called when an item is clicked                                    | -                                      | Function                                   | It receives the clicked item data and event as a parameter.  |
+    | `onCellClick`       | function  | A callback function that is called when a cell on the calendar is clicked                      | -                                      | Function                                   | It receives the clicked cell date information and event as a parameter. |
+    | `onCellHeaderClick` | function  | A callback function that is called when a cell header is clicked                               | -                                      | Function                                   | It receives the clicked cell date information and event as a parameter. It is the part to the left and right of the day number within a cell. In the case of MONTH and WEEK views, `onCellClick` method will be called instead of this one. |
+    | `cellDisplayMode`   | object    | An object that controls the display mode of the cells in the calendar                          | -                                      | Object with properties: `[CURRENT_VIEW]`, `inactiveCells`, `state` | -                                                            |
+</wrapper>
