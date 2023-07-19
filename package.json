@@ -1,0 +1,34 @@
+{
+  "name": "react-lightweight-calendar-docs",
+  "version": "0.0.1",
+  "description": "React Lightweight Calendar Documentation",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jovanjenjic/react-lightweight-calendar-docs.git"
+  },
+  "author": "Jovan Jenjic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jovanjenjic/react-lightweight-calendar-docs.git/issues"
+  },
+  "homepage": "https://github.com/jovanjenjic/react-lightweight-calendar-docs.git#readme",
+  "dependencies": {
+    "@mui/material": "^5.14.0",
+    "@mui/x-date-pickers": "^6.10.0",
+    "next": "^13.0.6",
+    "nextra": "latest",
+    "nextra-theme-docs": "latest",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-lightweight-calendar": "^1.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "18.11.10",
+    "typescript": "^4.9.3"
+  }
+}

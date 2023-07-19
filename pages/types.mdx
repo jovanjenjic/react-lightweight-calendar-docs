@@ -1,0 +1,28 @@
+## React Lightweight Calendar Types
+
+Table of types in the case of using a component in a typescript application:
+<br /> <br />
+
+| Attribute                   | Type                                                                                      | Complex type                                                                                                                       |
+| -------------------------- | ----------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `data`                      | `Record<string, any>[]`                                                                  | -                                                                 |
+| `currentView`               | `CurrentView \| string`                                                                  | `enum CurrentView { MONTH = 'MONTH', WEEK = 'WEEK', WEEK_TIME = 'WEEK_TIME', DAY = 'DAY', WEEK_IN_PLACE = 'WEEK_IN_PLACE', DAY_IN_PLACE = 'DAY_IN_PLACE'}`                                                                            |
+| `currentDate`               | `string \| Date`                                                                         | -                                                                                      |
+| `setCurrentDate`            | `(date: string \| Date) => void`                                                         | -                                                              |
+| `activeTimeDateField`       | `string`                                                                                  | -                                                           |
+| `weekStartsOn`              | `WeekStartsOn \| number`                                                                 | `enum WeekStartsOn { SUNDAY = 0, MONDAY = 1, TUESDAY = 2, WEDNESDAY = 3, THURSDAY = 4, FRIDAY = 5, SATURDAY = 6 }`                                                                            |
+| `renderItem`                | `(data: Record<string, any>, isHovered: boolean) => JSX.Element`                          | -                                                        |
+| `renderItemText`            | `(data: Record<string, any>) => JSX.Element`                                              | -                                    |
+| `renderHeaderItem`          | `(data: Record<string, any>, extras: GetHeaderItemInfoFunc) => JSX.Element`               | `interface GetHeaderItemInfoFunc { gridColumn: string; isFromPrevious?: boolean; isFromNext?: boolean; }`                               |
+| `renderHeaderItemText`      | `(data: Record<string, any>) => JSX.Element`                                              | -               |
+| `disableHoverEffect`        | `boolean`                                                                                 | -                            |
+| `colorDots`                 | `ColorDot[]`                                                                             | -                                           |
+| `timeDateFormat`            | `TimeFormat`                                                                             | `interface TimeFormat { day?: string; hour?: string; monthYear?: string; }`                                                       |
+| `onDayNumberClick`          | `(day: string, event: React.MouseEvent<HTMLElement>) => void`                             | -                                                                  |
+| `onDayStringClick`          | `(day: string \| Date, event: React.MouseEvent<HTMLElement>) => void`                      | -                                                                    |
+| `onHourClick`               | `(value: DateInfo \| number, event: React.MouseEvent<HTMLElement>) => void`               | `interface DateInfo { isCurrentDay: boolean; isCurrentMonth?: boolean; date: string; day: number; month: number; year: number; hour?: number; timeDate: string; timeDateUTC: string; }`                                     |
+| `onColorDotClick`           | `(value: ColorDot, event: React.MouseEvent<HTMLElement>) => void`                         | -                                                                   |
+| `onItemClick`               | `(item: Record<string, any>, event: React.MouseEvent<HTMLElement>) => void`                | -                                                                       |
+| `onCellClick`               | `(value: DateInfo, event: React.MouseEvent<HTMLElement>) => void`                         | `interface DateInfo { isCurrentDay: boolean; isCurrentMonth?: boolean; date: string; day: number; month: number; year: number; hour?: number; timeDate: string; timeDateUTC: string; }`                                                        |
+| `onCellHeaderClick`         | `(value: DateInfo, event: React.MouseEvent<HTMLElement>) => void`                         | `interface DateInfo { isCurrentDay: boolean; isCurrentMonth?: boolean; date: string; day: number; month: number; year: number; hour?: number; timeDate: string; timeDateUTC: string; }`                                                                 |
+| `cellDisplayMode`           | `CellDisplayMode`                                                                        | `interface CellDisplayMode { [key: string]: { state: CellDisplayModeState; inactiveCells: string[]; }; }`<br /><br /> `enum CellDisplayModeState { ALL_COLLAPSED = 'ALL_COLLAPSED', ALL_EXPANDED = 'ALL_EXPANDED', CUSTOM = 'CUSTOM' }`                                                          |

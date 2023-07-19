@@ -1,0 +1,46 @@
+import { Callout } from 'nextra/components'
+
+## Custom Styling
+
+It is necessary to access any element through the member and apply the style, as in the example below:
+
+```css
+/* CalendarCustomStyles.css */
+
+.week-time-header__number {
+    color: #205c97
+}
+
+.week-time-view-inside {
+  background-color: #f8faff;
+}
+```
+
+```jsx
+import './CalendarCustomStyles.css';
+
+    ...
+
+    <Calendar
+      data={[
+        {
+          id: '1',
+          startTime: '2023-06-02T01:10:00Z',
+          endTime: '2023-06-02T03:10:00Z',
+          title: 'Conference',
+        },
+      ]}
+      currentView='WEEK_TIME'
+      currentDate='2023-06-01'
+      activeTimeDateField='startTime-endTime'
+    />
+
+  ...
+```
+
+<Callout type="warning" emoji="⚠️">
+When writing the rest of the `css` for your application, make sure that the class names do not match with those of the calendar component. This is unlikely because component class names are very calendar specific.
+</Callout>
+
+Above is a basic example where the background of the calendar and day of the week has been changed for just WEEK_TIME view. By the same principle,
+you can access any element, you need to use inspect and look at the element `className` of any component, then apply a certain style.

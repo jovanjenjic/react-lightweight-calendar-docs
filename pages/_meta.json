@@ -1,0 +1,24 @@
+{
+  "index": "Introduction",
+  "views": "Views",
+  "instalation": "Instalation",
+  "props": "Props",
+  "types": "Types for Typescript",
+  "usages": "Usages",
+  "customStyling": "Custom Style",
+  "documentation": {
+    "title": "Documentation",
+    "href": "/",
+    "type": "page"
+  },
+  "about": {
+    "title": "About",
+    "type": "page"
+  },
+  "contact": {
+    "title": "Contact ↗",
+    "type": "page",
+    "href": "https://www.linkedin.com/in/jovan-jenji%C4%87/",
+    "newWindow": true
+  }
+}
