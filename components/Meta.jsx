@@ -64,11 +64,14 @@ const Meta = ({ description, title, keywords }) => {
       <meta name="msapplication-TileColor" content="#da532c" />
       <meta name="theme-color" content="#ffffff" />
       <meta property="og:image" content="/favicon.png" />
-      {title && <title>{title}</title>}
-      {title && <meta property="og:title" content={title} />}
-      {description && <meta name="description" content={description} />}
-      {description && <meta property="og:description" content={description} />}
-      {keywords && <meta name="keywords" content={keywords} />}
+      <title>{title}</title>
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta name="description" content={description} />
+      <meta name="keywords" content={keywords} />
+      <meta http-equiv="Content-Language" content="en" />
+      <link rel="canonical" href={canonical} />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
     </Head>
   );
 }
@@ -77,12 +80,14 @@ Meta.propTypes = {
   description: PropTypes.string,
   title: PropTypes.string,
   keywords: PropTypes.string,
+  canonical: PropTypes.string,
 };
 
 Meta.defaultProps = {
   description: null,
   title: null,
   keywords: null,
+  canonical: null,
 };
 
 export default Meta;
