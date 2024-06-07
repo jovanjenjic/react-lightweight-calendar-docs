@@ -4,7 +4,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { pageview } from '../utils/analytics.js';
 
-const Meta = ({ description, title, keywords }) => {
+const Meta = ({ description, title, keywords, canonical }) => {
   const router = useRouter();
 
   React.useEffect(() => {
